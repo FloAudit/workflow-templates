@@ -1,1 +1,27 @@
-{}
+{
+  "workflow": "User Login Flow",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "login_request",
+      "type": "http",
+      "config": {
+        "method": "POST",
+        "url": "https://api.example.com/auth/login",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "username": "${inputs.username}",
+          "password": "${inputs.password}"
+        }
+      },
+      "validation": {
+        "status": 200,
+        "extract": {
+          "token": "json.token"
+        }
+      }
+    }
+  ]
+}

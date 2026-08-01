@@ -1,1 +1,20 @@
-{}
+{
+  "workflow": "Browser Checkout Automation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "playwright_checkout",
+      "type": "browser",
+      "config": {
+        "engine": "playwright",
+        "steps": [
+          { "action": "click", "selector": ".add-to-cart" },
+          { "action": "click", "selector": ".checkout-btn" },
+          { "action": "fill", "selector": "#cc-number", "value": "424242424242" },
+          { "action": "click", "selector": "#submit-order" },
+          { "action": "waitForText", "text": "Order Confirmed" }
+        ]
+      }
+    }
+  ]
+}

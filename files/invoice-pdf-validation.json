@@ -1,1 +1,22 @@
-{}
+{
+  "workflow": "Invoice PDF Validation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "validate_pdf",
+      "type": "file_pdf",
+      "config": {
+        "path": "/tmp/invoices/${inputs.invoiceId}.pdf",
+        "operations": [
+          { "action": "extractText" }
+        ]
+      },
+      "validation": {
+        "assertContains": [
+          "Invoice #${inputs.invoiceId}",
+          "Total: $100.00"
+        ]
+      }
+    }
+  ]
+}

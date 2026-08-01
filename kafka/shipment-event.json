@@ -1,1 +1,20 @@
-{}
+{
+  "workflow": "Publish Shipment Event",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "publish_shipment",
+      "type": "kafka_produce",
+      "config": {
+        "topic": "shipments.ready",
+        "message": {
+          "key": "${inputs.orderId}",
+          "value": {
+            "orderId": "${inputs.orderId}",
+            "trackingNumber": "TRK123456789"
+          }
+        }
+      }
+    }
+  ]
+}

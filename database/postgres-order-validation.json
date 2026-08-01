@@ -1,1 +1,21 @@
-{}
+{
+  "workflow": "Postgres Order Validation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "check_order",
+      "type": "database",
+      "config": {
+        "connection": "postgres_main",
+        "query": "SELECT status FROM orders WHERE id = $1",
+        "params": ["${inputs.orderId}"]
+      },
+      "validation": {
+        "expectedRows": 1,
+        "assert": {
+          "row[0].status": "COMPLETED"
+        }
+      }
+    }
+  ]
+}

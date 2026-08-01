@@ -1,1 +1,18 @@
-{}
+{
+  "workflow": "CSV Import Validation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "validate_csv",
+      "type": "file_csv",
+      "config": {
+        "path": "./data/imports.csv",
+        "hasHeader": true
+      },
+      "validation": {
+        "expectedRows": 100,
+        "assertColumnExists": ["email", "name", "role"]
+      }
+    }
+  ]
+}

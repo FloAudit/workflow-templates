@@ -1,1 +1,20 @@
-{}
+{
+  "workflow": "Browser Login Automation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "playwright_login",
+      "type": "browser",
+      "config": {
+        "engine": "playwright",
+        "steps": [
+          { "action": "goto", "url": "https://example.com/login" },
+          { "action": "fill", "selector": "#username", "value": "${inputs.username}" },
+          { "action": "fill", "selector": "#password", "value": "${inputs.password}" },
+          { "action": "click", "selector": "#login-button" },
+          { "action": "waitForSelector", "selector": ".dashboard" }
+        ]
+      }
+    }
+  ]
+}

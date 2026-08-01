@@ -1,1 +1,28 @@
-{}
+{
+  "workflow": "Order API Flow",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "create_order",
+      "type": "http",
+      "config": {
+        "method": "POST",
+        "url": "https://api.example.com/orders",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "items": [
+            { "productId": "123", "quantity": 2 }
+          ]
+        }
+      },
+      "validation": {
+        "status": 201,
+        "extract": {
+          "orderId": "json.id"
+        }
+      }
+    }
+  ]
+}

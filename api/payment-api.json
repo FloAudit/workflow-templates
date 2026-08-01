@@ -1,1 +1,25 @@
-{}
+{
+  "workflow": "Payment Processing Flow",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "process_payment",
+      "type": "http",
+      "config": {
+        "method": "POST",
+        "url": "https://api.example.com/payments",
+        "headers": {
+          "Authorization": "Bearer ${env.PAYMENT_TOKEN}"
+        },
+        "body": {
+          "amount": 100.0,
+          "currency": "USD",
+          "orderId": "${inputs.orderId}"
+        }
+      },
+      "validation": {
+        "status": 201
+      }
+    }
+  ]
+}

@@ -1,1 +1,20 @@
-{}
+{
+  "workflow": "Payment Created Event Listener",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "consume_payment_event",
+      "type": "kafka_consume",
+      "config": {
+        "topic": "payments.created",
+        "groupId": "flowops-consumer",
+        "timeoutMs": 5000
+      },
+      "validation": {
+        "assert": {
+          "message.value.status": "SUCCESS"
+        }
+      }
+    }
+  ]
+}

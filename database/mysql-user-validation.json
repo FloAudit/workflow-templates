@@ -1,1 +1,20 @@
-{}
+{
+  "workflow": "MySQL User Validation",
+  "version": "1.0",
+  "tasks": [
+    {
+      "id": "validate_user_exists",
+      "type": "database",
+      "config": {
+        "connection": "mysql_users",
+        "query": "SELECT count(*) as count FROM users WHERE email = ?",
+        "params": ["${inputs.email}"]
+      },
+      "validation": {
+        "assert": {
+          "row[0].count": 1
+        }
+      }
+    }
+  ]
+}
