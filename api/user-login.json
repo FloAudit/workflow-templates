@@ -1,0 +1,167 @@
+{
+  "id": "5634fea6-6b51-485b-8ac3-4463d0116619",
+  "name": "hireskill login",
+  "description": "Auto-saved workflow",
+  "version": 1,
+  "status": "draft",
+  "nodes": [
+    {
+      "id": "3f49d5a3-585a-4e37-9b23-ff9287b1aa8c",
+      "data": {
+        "type": "playwright",
+        "label": "Execute Playwright",
+        "config": {
+          "video": "Yes",
+          "actions": [
+            {
+              "url": "https://hireskill.in/login",
+              "type": "Open URL",
+              "retry": 0,
+              "enabled": "Yes",
+              "timeout": 30000,
+              "retryDelay": 1000,
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Fill Input",
+              "retry": 0,
+              "value": "imsaaj@gmail.com",
+              "enabled": "Yes",
+              "locator": "#email",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "[placeholder=\"hi@hextastudio.in\"]",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "input[type=\"email\"]",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "input.text-sm.w-full.py-2.5.px-4.border.border-slate-200.rounded-lg.bg-white.text-black.transition-all",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "input#email",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "CSS",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Fill Input",
+              "retry": 0,
+              "value": "786092",
+              "enabled": "Yes",
+              "locator": "#password",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "[placeholder=\"••••••••\"]",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "input.text-sm.w-full.py-2.5.px-4.border.border-slate-200.rounded-lg.bg-white.text-black.transition-all.pr-10",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "input#password",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "CSS",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Click",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "Login",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "button.w-full.bg-orange-500.disabled:bg-orange-300.text-white.font-medium.py-3.px-4.rounded-lg.transition-colors.mt-2",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "div#root > div:nth-of-type(2) > main > div > div > div:nth-of-type(7) > form > button",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "Button",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Assert Text",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "Last Active",
+              "timeout": 30000,
+              "retryDelay": 1000,
+              "expectedText": "Last Active",
+              "locatorStrategy": "Text",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            }
+          ],
+          "browser": "Chromium",
+          "executionMode": "Visual Builder"
+        },
+        "status": "pending"
+      },
+      "type": "custom",
+      "width": 260,
+      "height": 67,
+      "dragging": false,
+      "position": {
+        "x": 132,
+        "y": 215
+      },
+      "selected": true
+    },
+    {
+      "id": "350a04f6-cf45-4a01-97bc-94fecd93ffb9",
+      "data": {
+        "type": "playwright",
+        "label": "Capture Screenshot",
+        "config": {
+          "store": "Execution",
+          "target": "Page",
+          "fullPage": "Yes",
+          "imageFormat": "PNG"
+        },
+        "status": "pending"
+      },
+      "type": "custom",
+      "width": 260,
+      "height": 67,
+      "dragging": false,
+      "position": {
+        "x": 498.8545010673045,
+        "y": 291.23763644693724
+      },
+      "selected": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-3f49d5a3-585a-4e37-9b23-ff9287b1aa8cright-350a04f6-cf45-4a01-97bc-94fecd93ffb9left",
+      "type": "smoothstep",
+      "source": "3f49d5a3-585a-4e37-9b23-ff9287b1aa8c",
+      "target": "350a04f6-cf45-4a01-97bc-94fecd93ffb9",
+      "sourceHandle": "right",
+      "targetHandle": "left"
+    }
+  ],
+  "createdAt": "2026-07-18T15:11:51.486Z",
+  "updatedAt": "2026-07-18T15:54:04.633Z"
+}
