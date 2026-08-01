@@ -1,0 +1,161 @@
+{
+  "id": "13d424ad-7c07-465e-a5ea-988abc27c536",
+  "name": "SARFRAJ",
+  "description": "Auto-saved workflow",
+  "version": 1,
+  "status": "draft",
+  "nodes": [
+    {
+      "id": "b75b7967-f0cd-4bc6-8d52-4b92255077cd",
+      "data": {
+        "type": "playwright",
+        "label": "Execute Playwright",
+        "config": {
+          "actions": [
+            {
+              "url": "https://sarfraj.com/",
+              "type": "Open URL",
+              "retry": 0,
+              "enabled": "Yes",
+              "timeout": 30000,
+              "retryDelay": 1000,
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Click",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "Services",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "a.py-2.transition-opacity",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "div#root > div > nav > div:nth-of-type(2) > a:nth-of-type(2)",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "Link",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Assert Text",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "Services",
+              "timeout": 30000,
+              "retryDelay": 1000,
+              "expectedText": "Services",
+              "locatorStrategy": "Text",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Click",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "Work",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "a.py-2.transition-opacity",
+                  "strategy": "CSS"
+                },
+                {
+                  "value": "div#root > div > nav > div:nth-of-type(2) > a",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "Link",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Click",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "div.absolute.inset-0.bg-linear-to-t.from-black/55.via-black/15.to-transparent.opacity-0.transition-opacity.duration-500",
+              "timeout": 30000,
+              "fallbacks": [
+                {
+                  "value": "div#root > div > div:nth-of-type(3) > section:nth-of-type(2) > div > div:nth-of-type(15) > a > div > div",
+                  "strategy": "CSS"
+                }
+              ],
+              "retryDelay": 1000,
+              "locatorStrategy": "CSS",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            },
+            {
+              "type": "Assert Text",
+              "retry": 0,
+              "enabled": "Yes",
+              "locator": "INTEGRATED CHARGING CASE",
+              "timeout": 30000,
+              "retryDelay": 1000,
+              "expectedText": "INTEGRATED CHARGING CASE",
+              "locatorStrategy": "Text",
+              "continueOnFailure": "No",
+              "screenshotOnFailure": "No"
+            }
+          ],
+          "browser": "Chromium",
+          "screenshot": "Yes",
+          "executionMode": "Visual Builder"
+        },
+        "status": "pending"
+      },
+      "type": "custom",
+      "width": 260,
+      "height": 67,
+      "dragging": false,
+      "position": {
+        "x": 61,
+        "y": 149
+      },
+      "selected": true
+    },
+    {
+      "id": "a21211d2-81e8-4190-9fa0-3d6af474cd50",
+      "data": {
+        "type": "playwright",
+        "label": "Capture Screenshot",
+        "config": {
+          "store": "Execution",
+          "target": "Page",
+          "fullPage": "Yes",
+          "imageFormat": "PNG"
+        },
+        "status": "pending"
+      },
+      "type": "custom",
+      "width": 260,
+      "height": 67,
+      "dragging": false,
+      "position": {
+        "x": 389.33453155716137,
+        "y": 221.13596346875605
+      },
+      "selected": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-b75b7967-f0cd-4bc6-8d52-4b92255077cdright-a21211d2-81e8-4190-9fa0-3d6af474cd50left",
+      "type": "smoothstep",
+      "source": "b75b7967-f0cd-4bc6-8d52-4b92255077cd",
+      "target": "a21211d2-81e8-4190-9fa0-3d6af474cd50",
+      "sourceHandle": "right",
+      "targetHandle": "left"
+    }
+  ],
+  "createdAt": "2026-07-26T06:01:27.227Z",
+  "updatedAt": "2026-07-26T06:10:07.391Z"
+}
