@@ -1,0 +1,11 @@
+{
+  "workflow": "Policy Issuance",
+  "steps": [
+    {"step": 1, "action": "Quote Generation API", "type": "REST_API"},
+    {"step": 2, "action": "Premium Calculation Engine", "type": "REST_API"},
+    {"step": 3, "action": "Risk Rules Engine", "type": "DECISION_TREE"},
+    {"step": 4, "action": "Policy Database Sync", "type": "DATABASE_UPDATE"},
+    {"step": 5, "action": "Generate Policy PDF", "type": "DOCUMENT_GENERATION"},
+    {"step": 6, "action": "Dispatch Email", "type": "EMAIL_SERVICE"}
+  ]
+}

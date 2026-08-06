@@ -1,0 +1,10 @@
+{
+  "test_suite": "Insurance Workflow Validation",
+  "test_cases": [
+    {"id": "TC-01", "name": "Validate End-to-End Claim Approval", "systems": ["API", "DB", "Kafka"]},
+    {"id": "TC-02", "name": "Validate OCR Extracted Metadata", "systems": ["OCR", "DB"]},
+    {"id": "TC-03", "name": "Validate Fraud Engine Decline", "systems": ["API", "DB"]},
+    {"id": "TC-04", "name": "Validate Policy PDF Generation", "systems": ["API", "FILE_SYSTEM"]},
+    {"id": "TC-05", "name": "Validate Underwriting Rule Set B", "systems": ["API", "DB"]}
+  ]
+}

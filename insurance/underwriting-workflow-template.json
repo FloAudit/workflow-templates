@@ -1,0 +1,10 @@
+{
+  "workflow": "Automated Underwriting",
+  "steps": [
+    {"step": 1, "action": "Fetch EHR (Medical) API", "type": "REST_API"},
+    {"step": 2, "action": "Fetch Credit/Financial API", "type": "REST_API"},
+    {"step": 3, "action": "Risk Engine Evaluation", "type": "AI_MODEL"},
+    {"step": 4, "action": "Decision Tree Execution", "type": "LOGIC"},
+    {"step": 5, "action": "Store Decision in DB", "type": "DATABASE_UPDATE"}
+  ]
+}

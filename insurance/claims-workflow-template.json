@@ -1,0 +1,10 @@
+{
+  "workflow": "Insurance Claims Processing",
+  "steps": [
+    {"step": 1, "action": "FNOL Intake API", "type": "REST_API"},
+    {"step": 2, "action": "Document Upload & OCR", "type": "OCR_EXTRACTION"},
+    {"step": 3, "action": "Fraud Detection API", "type": "REST_API"},
+    {"step": 4, "action": "Claims Database Sync", "type": "DATABASE_UPDATE"},
+    {"step": 5, "action": "Payment Gateway Approval", "type": "REST_API"}
+  ]
+}
