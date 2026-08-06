@@ -1,0 +1,10 @@
+{
+  "workflow": "Core Business Workflow Validation",
+  "description": "A generic end-to-end test spanning UI, API, Database, and Events.",
+  "steps": [
+    {"step": 1, "action": "Browser Login", "type": "UI_AUTOMATION"},
+    {"step": 2, "action": "Submit Transaction API", "type": "REST_API"},
+    {"step": 3, "action": "Verify Ledger Sync", "type": "DATABASE_UPDATE"},
+    {"step": 4, "action": "Verify Event Published", "type": "KAFKA_EVENT"}
+  ]
+}
